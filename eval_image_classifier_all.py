@@ -182,10 +182,11 @@ def main(_):
     # GPU memory dynamic allocation
     session_config = tf.ConfigProto()
     session_config.gpu_options.allow_growth = True
-    l = glob.glob(checkpoint_path+'model.ckpt-*.index')
+    l = glob.glob(FLAGS.checkpoint_path+'model.ckpt-*.index')
     new_l=[]
     for i in l:
-      new_l.append("".join(i.split(".")[:-1]))
+      new_l.append(".".join(i.split(".")[:-1]))
+    print("hererere:",l,checkpoint_path+'model.ckpt-*.index')
     for epath in new_l:
       slim.evaluation.evaluate_once(
           master=FLAGS.master,
