@@ -1,0 +1,19 @@
+ptyhon /content/Super-convergence-tensorflow-slim/train_image_classifier.py \
+--train_dir /content/models/onecycle \
+--dataset_dir /content/datasets/cifarnet \
+--dataset_name CIFAR-10 \
+--dataset_split_name train \
+--model_name cifarnet \
+--learning_rate_decay_type one_cycle \
+--optimizer momentum \
+--momentum 0.95 \
+--min_momentum 0.85 \
+--weight_decay 0.00001 \
+--learning_rate 0.001 \
+--max_learning_rate 0.02 \
+--step_size 6000 \
+--max_number_of_steps 12000 \
+--train_image_size 32 \
+--batch_size 64 \
+--save_summaries_secs 50 \
+--save_interval_secs 50
